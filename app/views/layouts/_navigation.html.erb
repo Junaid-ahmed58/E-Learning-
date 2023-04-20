@@ -10,7 +10,14 @@
       </button>
      <%= link_to 'E-learning', root_path, class: 'navbar-brand' %>
     </div>
-
+    
+    <% if instructor_signed_in?  %>
+      <%= button_to "Sign out", destroy_instructor_session_path, method: :delete, class: "btn btn-primary"%>
+    <% else %>
+      <%= link_to "Sign up", new_instructor_registration_path, class: "btn btn-primary" %>
+      <%= link_to "Sign in", new_instructor_session_path, class: "btn btn-primary"%>
+    <% end %>
+    
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
