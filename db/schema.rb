@@ -24,13 +24,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_19_053750) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "instructors", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "lessons", force: :cascade do |t|
     t.string "name"
     t.text "description"
