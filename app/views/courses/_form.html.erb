@@ -1,0 +1,28 @@
+<h1>Add Course<h1>
+
+<%= form_for @course  do |f| %>
+  <div class="row mb-3">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><%= f.label :name %></label>
+    <div class="col-sm-3">
+      <%= f.text_field :name, class: "form-control form-control-sm" %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="colFormLabel" class="col-sm-2 col-form-label"><%= f.label :description %></label>
+    <div class="col-sm-3">
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg"><%= f.label :price %></label>
+    <div class="col-sm-3">
+      <%= f.text_field :price, class: "form-control form-control-lg"%>
+    </div>
+  </div>
+
+  <div class="col-5">
+    <button type="submit" class="btn btn-primary">Add Course</button>
+  </div>
+<% end %>
