@@ -10,18 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_20_073941) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_20_100009) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "currents", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "instructor_id"
   end
 
   create_table "instructors", force: :cascade do |t|
@@ -34,22 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_20_073941) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_instructors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_instructors_on_reset_password_token", unique: true
-  end
-
-  create_table "lessons", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.string "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
