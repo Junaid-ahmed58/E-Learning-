@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:edit, :update, :destroy, :show]
 
   def index
-    @courses = Course.all
+    @courses = current_instructor.courses
   end
 
   def show; end
@@ -16,7 +16,6 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
     @course.instructor_id = current_instructor.id
     if @course.save    
-      @course = Course.new(course_params)
       flash[:success] = "course successfully created"
       redirect_to courses_path
     else
