@@ -37,7 +37,8 @@ class CoursesController < ApplicationController
 
     redirect_to courses_path
   end
-
+  
+	
  private
   def course_params
     params.require(:course).permit(:name, :description, :price, :instructor_id)
