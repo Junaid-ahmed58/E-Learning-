@@ -1,6 +1,6 @@
-<h1>Add Course<h1>
+<h1>Add Lesson<h1>
 
-<%= form_for @course  do |f| %>
+<%= form_for :lesson  do |f| %>
   <div class="row mb-3">
     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><%= f.label :name %></label>
     <div class="col-sm-3">
@@ -16,13 +16,13 @@
   </div>
 
   <div class="row">
-    <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg"><%= f.label :price %></label>
+    <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg"><%= f.label :content %></label>
     <div class="col-sm-3">
-      <%= f.text_field :price, class: "form-control"%>
+      <%= f.text_field :content, class: "form-control"%>
     </div>
   </div>
 
   <div class="col-5">
-    <button type="submit" class="btn btn-primary">Add Course</button>
+    <button type="submit" class="btn btn-primary">Add Lesson</button>
   </div>
 <% end %>
