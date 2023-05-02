@@ -32,6 +32,7 @@ gem "redis", "~> 4.0"
 gem 'byebug', '~> 9.0', '>= 9.0.5'
 
 gem 'devise'
+gem 'devise_invitable' 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

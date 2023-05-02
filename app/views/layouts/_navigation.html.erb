@@ -11,19 +11,12 @@
      <%= link_to 'E-learning', root_path, class: 'navbar-brand' %>
     </div>
   
-    <% if instructor_signed_in?  %>
-      <%= button_to "Sign out", destroy_instructor_session_path, method: :delete, class: "btn btn-primary"%>
+    <% if instructor_signed_in? || user_signed_in?  %>
+      <%= button_to "Sign out", destroy_instructor_session_path,  method: :delete, class: "btn btn-primary"%>
     <% else %>
       <%= link_to "Sign up", new_instructor_registration_path, class: "btn btn-primary" %>
       <%= link_to "Sign in", new_instructor_session_path, class: "btn btn-primary"%>
     <% end %>
-
-		<% if user_signed_in? %>
-			<%= button_to "Sign out user", destroy_user_session_path, method: :delete %>
-		<% else %>	
-			<%= link_to "sign up user", new_user_registration_path %>
-			<%= link_to "Sign in user", new_user_session_path %>
-		<% end %>
 
 
     <!-- Collect the nav links, forms, and other content for toggling -->

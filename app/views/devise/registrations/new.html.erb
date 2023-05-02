@@ -28,4 +28,9 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<% if current_page?(new_user_registration_path) %>
+  <%= link_to 'Sign-up as Instructor', new_instructor_registration_path, class: 'btn btn-primary' %>
+<% elsif %>
+  <%= link_to 'Sign-up as Student', new_user_registration_path, class: 'btn btn-primary' %>
+<% end %>
 </div>
