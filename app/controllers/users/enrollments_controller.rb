@@ -1,19 +1,17 @@
 class Users::EnrollmentsController < UserBaseController
+  def index; end
 
-	def index
-	end
-
-	def enroll
+  def enroll
 		course = Course.find(params[:id])
 		if current_user.enrollments.create(course: course)
 			flash[:success] = "You have sucessfully enrolled in course"
 		else
 			flash[:error] = "Failed to enroll in course"
-	end
+  end
 	 redirect_to users_courses_path
   end
-	
-	def create
+
+  def create
 		@enrollment = current_user.enrollments.new(course_id: params[:course_id])
 	  if @enrollment.save
 			flash[:notice] = 'You enrolled successfully in the course'
