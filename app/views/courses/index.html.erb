@@ -9,6 +9,7 @@
     </tr>
   </thead>
   <tbody>
+<<<<<<< Updated upstream
    <% @courses.each do |course|%>
         <tr>
             <th scope="row">1</th>
@@ -19,6 +20,18 @@
             <td><%= link_to "Show", course_path(course) %></td>
             <td><%= link_to "Destroy", course_path(course), data: { "turbo-method": :delete } %></td>
         </tr>
+=======
+   <% @courses.each_with_index do |course, index|%>
+      <tr>
+				<td><%= index + 1 %></td>
+        <td><%= course.name %></td>
+        <td><%= course.description %></td>
+        <td><%= course.price %></td>
+        <td><%= link_to "Edit", edit_course_path(course) %></td>
+        <td><%= link_to "Show", course_path(course) %></td>
+        <td><%= link_to "Destroy", course_path(course), data: { "turbo-method": :delete } %></td>
+      </tr>
+>>>>>>> Stashed changes
     <% end %>
   </tbody>
 </table>
