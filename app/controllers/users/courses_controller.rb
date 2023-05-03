@@ -1,7 +1,6 @@
 class Users::CoursesController < UserBaseController
   def index
-   enrolled_courses = current_user.enrollments.pluck(:course_id)
-   @courses = Course.where.not(id: enrolled_courses)
+   @courses = Course.where.not(id: current_user.enrollments.pluck(:course_id))
   end
 
   def in_progress
