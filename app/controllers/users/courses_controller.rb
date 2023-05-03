@@ -5,7 +5,6 @@ class Users::CoursesController < UserBaseController
   end
 
   def in_progress
-   enrolled_courses = current_user.enrollments.pluck(:course_id)
-   @courses = Course.where(id: enrolled_courses)
+   @courses = current_user.courses
   end
 end
