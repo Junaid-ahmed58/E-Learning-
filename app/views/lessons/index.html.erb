@@ -1,0 +1,26 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Name</th>
+			<th scope="col">Description</th>
+			<th scope="col">Content</th>
+			<th scope="col">Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @lessons.each do |lesson|%>
+			<tr>
+				<th scope="row">1</th>
+				<td><%= lesson.name%></td>
+				<td><%= lesson.description%></td>
+				<td><%= lesson.content%></td>
+				<td><%= link_to "Edit", edit_lesson_path(lesson) %></td>
+				<td><%= link_to "Show", lesson_path(lesson)%></td>
+				<td><%= link_to "Destroy", lesson_path(lesson), data: { "turbo-method": :delete} %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to "Add lesson", new_lesson_path %>

@@ -3,13 +3,13 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">description</th>
-      <th scope="col">price</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-   <% @courses.each_with_index do |course, index|%>
+  <% @courses.each_with_index do |course, index|%>
       <tr>
        <td><%= index + 1 %></td>
        <td><%= course.name %></td>
@@ -22,5 +22,4 @@
     <% end %>
   </tbody>
 </table>
- 
 <%= link_to "Add course", new_course_path %>
