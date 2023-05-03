@@ -12,12 +12,16 @@
     </div>
   
    <% if instructor_signed_in? || user_signed_in?  %>
-    <%= link_to "In progress", in_progress_users_courses_path, class: "btn btn-primary" %>
     <%= button_to "Sign out", destroy_instructor_session_path,  method: :delete, class: "btn btn-primary"%>
    <% else %>
     <%= link_to "Sign up", new_instructor_registration_path, class: "btn btn-primary" %>
     <%= link_to "Sign in", new_instructor_session_path, class: "btn btn-primary"%>
    <% end %>
+	 
+   <% if user_signed_in? %>
+	  <%= link_to "In progress", in_progress_users_courses_path, class: "btn btn-primary" %>
+	 <% else %>
+	 <% end %>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
