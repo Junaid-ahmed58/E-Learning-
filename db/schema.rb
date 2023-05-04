@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_04_112615) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_04_124119) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -52,6 +52,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_112615) do
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "comments"
+    t.integer "rating"
   end
 
   create_table "user_course_reviews", force: :cascade do |t|

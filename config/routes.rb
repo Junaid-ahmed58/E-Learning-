@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, path: '/courses/users'
-  namespace :users do
-   resources :courses do
-   collection do
-   get 'in_progress'
-  end
-  end
-  resources :enrollments
-  end
   devise_for :instructors
-  root to: 'courses#index'
+  
+  resources :users, path: '/courses/users'
   resources :courses
   resources :lessons
+
+  namespace :users do
+    resources :enrollments
+    resources :reviews
+    resources :courses do
+      collection do
+        get 'in_progress'
+      end
+    end
+  end
+
+  root to: 'courses#index'
 end

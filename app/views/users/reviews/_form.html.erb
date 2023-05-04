@@ -1,0 +1,22 @@
+<h1>Add Review<h1>
+
+
+<%= form_for @review, url: users_reviews_path do |f| %>
+  <div class="row mb-3">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><%= f.label :rating %></label>
+    <div class="col-sm-3">
+      <%= f.text_field :rating, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="colFormLabel" class="col-sm-2 col-form-label"><%= f.label :comment %></label>
+    <div class="col-sm-3">
+      <%= f.text_field :comments, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="col-5">
+    <button type="submit" class="btn btn-primary">Add review</button>
+  </div>
+<% end %>

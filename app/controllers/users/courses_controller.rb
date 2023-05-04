@@ -6,4 +6,9 @@ class Users::CoursesController < UserBaseController
   def in_progress
    @courses = current_user.courses
   end
+
+  def reviews
+    
+  end
+  
 end
