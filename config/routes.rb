@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-	devise_for :users
-	authenticated :user do
-    root to: 'users#show', as: :authenticated_root
+  devise_for :users
+  resources :users, path: '/courses/users'
+  namespace :users do
+   resources :courses do
+   collection do
+   get 'in_progress'
   end
-	devise_for :instructors
-	root to: 'courses#index'
-	post '/create_user_or_instructor', to: 'sessions#create_user_or_instructor'
-
-  resources :courses do
-		resources :enrollments
-	end
+  end
+  resources :enrollments
+  end
+  devise_for :instructors
+  root to: 'courses#index'
+  resources :courses
   resources :lessons
 end
