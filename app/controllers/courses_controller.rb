@@ -1,5 +1,4 @@
 class CoursesController < ApplicationController
-  before_action :authenticate_instructor!
   before_action :set_course, only: [:edit, :update, :destroy, :show]
 
   def index
@@ -34,12 +33,12 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    @course.destroy
+   @course.destroy
 
-    redirect_to courses_path
+   redirect_to courses_path
   end
 
- private
+  private
   def course_params
     params.require(:course).permit(:name, :description, :price, :instructor_id)
   end
