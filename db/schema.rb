@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_28_111246) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_04_124119) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -47,6 +47,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_111246) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "comments"
+    t.integer "rating"
+  end
+
+  create_table "user_course_reviews", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "course_id"
+    t.integer "review_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -11,4 +11,5 @@ class Users::EnrollmentsController < UserBaseController
    end
    redirect_to users_courses_path
   end
+
 end

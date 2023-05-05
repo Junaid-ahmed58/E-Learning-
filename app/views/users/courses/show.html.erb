@@ -1,0 +1,10 @@
+<div class= "container">
+  <strong>Name:</strong>
+  <%= @course.name %>
+  <strong>Description:</strong>
+  <%= @course.description %>
+  <strong>price:</strong>
+  <%= @course.price%>
+  <td><%= link_to "Reviews", users_course_reviews_path(@course) %></td>
+  <%= link_to 'Back', in_progress_users_courses_path %>
+</div>

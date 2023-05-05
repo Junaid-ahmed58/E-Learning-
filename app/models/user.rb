@@ -3,4 +3,6 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
   has_many :enrollments
   has_many :courses, through: :enrollments
+  has_many :user_course_reviews
+  has_many :reviews, through: :user_course_reviews
 end
