@@ -5,6 +5,28 @@
   <%= @course.description %>
   <strong>price:</strong>
   <%= @course.price%>
-  <td><%= link_to "Reviews", users_course_reviews_path(@course) %></td>
   <%= link_to 'Back', in_progress_users_courses_path %>
-</div>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Rating</th>
+          <th scope="col">Comment</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @reviews.each do |review|%>
+          <tr>
+          <td><%= review.rating %></td>
+          <td><%= review.comments %></td>
+          <td><%= link_to "Delete", users_course_path(@course), data: { "turbo-method": :delete } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= render 'form' %>
+
+</div>  
