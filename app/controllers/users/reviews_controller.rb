@@ -24,4 +24,3 @@ class Users::ReviewsController < UserBaseController
   end
 
 end
- 
