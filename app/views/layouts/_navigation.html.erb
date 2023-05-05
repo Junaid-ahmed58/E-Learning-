@@ -19,7 +19,8 @@
    <% end %>
 	 
    <% if user_signed_in? %>
-	  <%= link_to "In progress", in_progress_users_courses_path, class: "btn btn-primary" %>
+	  <%= link_to "Enrolled Courses", in_progress_users_courses_path, class: "btn btn-primary" %>
+    <%= link_to "Courses", users_courses_path, class: "btn btn-primary" %>
 	 <% else %>
 	 <% end %>
 

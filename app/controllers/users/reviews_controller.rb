@@ -1,25 +1,27 @@
 class Users::ReviewsController < UserBaseController
   def index
-    @reviews = Review.all
+    @reviews = Review.where.not(id: current_user.reviews.pluck(:review_id))
   end
-  
+
   def new
     @review = Review.new
   end
 
   def create
-    @review = Review.new(review_params)
-    if @review.save
-      redirect_to reviews_path, notice: "Review added successfully"
-    else
-      render :index
-    end
+    @review = current_user.reviews.new(review_params)
+   if @review.save
+    flash[:notice] = 'Thanks for Review'
+    redirect_to users_course_reviews_path
+   else
+    flash[:alert] = 'Review not added'
+   end
+   
   end
 
   private
-
   def review_params
-    params.require(:review).permit(:rating, :comment)
+    params.require(:review).permit(:rating, :comments, :course_id)
   end
 
 end
+ 

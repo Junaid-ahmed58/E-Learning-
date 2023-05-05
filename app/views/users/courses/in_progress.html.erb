@@ -14,7 +14,8 @@
    <td><%= course.name %></td>
    <td><%= course.description %></td>
    <td><%= course.price %></td>
-   <td><%= link_to "Reviews", users_reviews_path(course), data: { "turbo-method": :post } %></td>
+   <td><%= link_to "Reviews", users_course_reviews_path(course) %></td>
+   <td><%= link_to "Show", users_course_path(course) %></td>
   </tr>
  <% end %>
  </tbody>

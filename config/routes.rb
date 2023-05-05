@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   namespace :users do
     resources :enrollments
-    resources :reviews
     resources :courses do
+      resources :reviews
       collection do
         get 'in_progress'
       end
